@@ -1,6 +1,11 @@
 import streamlit as st
 
+def run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest):
+    pass
+
+
 start = False
+
 st.title("What club should you be in? (AI_Lab project)")
 
 st.write(
@@ -86,3 +91,11 @@ if len(research_interest) > 1 or len(research_interest) == 0:
     start = False
     st.markdown(":red[error: Please make sure you select one option]")
 start = True
+
+st.button("Reset", type="primary")
+if st.button("Run AI") and start == True:
+    output = run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest)
+elif start == False:
+    st.markdown(":red[error:please make sure you've inputted everything correctly]")
+
+st.write("You should go into", output)
