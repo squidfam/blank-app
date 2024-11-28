@@ -4,7 +4,7 @@ def run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,r
     pass
 
 
-start = False
+start_count = 0
 
 st.title("What club should you be in? (AI_Lab project)")
 
@@ -21,9 +21,9 @@ academic_interest = st.multiselect(
 )
 
 if len(academic_interest) > 1 or len(academic_interest) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 skills = st.multiselect(
     "what are your skills?",
@@ -31,9 +31,9 @@ skills = st.multiselect(
 )
 
 if len(skills) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 location = st.multiselect(
     "where do you live?",
@@ -41,9 +41,9 @@ location = st.multiselect(
 )
 
 if len(location) > 1 or len(location) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 year_of_study = st.multiselect(
     "what is your current year of study?",
@@ -51,9 +51,9 @@ year_of_study = st.multiselect(
 )
 
 if len(year_of_study) > 1 or len(year_of_study) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 major = st.multiselect(
     "what is your Major?",
@@ -61,9 +61,9 @@ major = st.multiselect(
 )
 
 if len(major) > 1 or len(major) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 GPA = st.slider(
     "what is your GPA?",
@@ -72,15 +72,18 @@ GPA = st.slider(
     2.0
 )
 
+start_count += 1
+
 languages = st.multiselect(
     "what Languages do you speak (english is assumed)?",
     ['Chinese','Japanese','Spanish','German','French'],
 )
+start_count += 1
 
 if len(languages) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 research_interest = st.multiselect(
     "what is your research interest?",
@@ -88,14 +91,14 @@ research_interest = st.multiselect(
 )
 
 if len(research_interest) > 1 or len(research_interest) == 0:
-    start = False
     st.markdown(":red[error: Please make sure you select one option]")
-start = True
+else:
+    start_count += 1
 
 st.button("Reset", type="primary")
-if st.button("Run AI") and start == True:
+if st.button("Run AI") and start_count == 8:
     output = run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest)
-elif start == False:
+elif start_count != 8:
     st.markdown(":red[error:please make sure you've inputted everything correctly]")
 
 st.write("You should go into", output)
