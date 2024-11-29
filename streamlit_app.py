@@ -96,9 +96,9 @@ else:
     start_count += 1
 
 st.button("Reset", type="primary")
-if st.button("Run AI") and start_count == 8:
+if st.button("Run AI") and start_count == 9:
     output = run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest)
-elif start_count != 8:
+elif start_count != 9:
     st.markdown(":red[error:please make sure you've inputted everything correctly]")
 
 st.write("You should go into", output)
