@@ -3,7 +3,6 @@ import streamlit as st
 def run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest):
     pass
 
-
 start_count = 0
 
 st.title("What club should you be in? (AI_Lab project)")
@@ -16,57 +15,57 @@ st.write("For more information on this project, check out our [Gituh repo](https
 )
 
 academic_interest = st.multiselect(
-    "what is your academic interest?",
+    "What are your academic interests?",
     ['Psychology','History','Computer Science','Biology','Mathematics','Physics'],
 )
 
 if len(academic_interest) > 1 or len(academic_interest) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
 skills = st.multiselect(
-    "what are your skills?",
+    "What are your skills?",
     ['Problem Solving','Leadership','Public Speaking','Data Analysis','Programming','Artistic'],
 )
 
 if len(skills) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
 location = st.multiselect(
-    "where do you live?",
+    "Where do you live?",
     ['New York','Boston','Chicago','Houston','Los Angeles','San Francisco'],
 )
 
 if len(location) > 1 or len(location) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
 year_of_study = st.multiselect(
-    "what is your current year of study?",
+    "What is your current year of study?",
     ['Freshman','Graduate','Junior','Senior','Sophomore'],
 )
 
 if len(year_of_study) > 1 or len(year_of_study) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
 major = st.multiselect(
-    "what is your Major?",
+    "What is your Major?",
     ['Psychology','Physics','Biology','Computer Science','History','Mathematics'],
 )
 
 if len(major) > 1 or len(major) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
 GPA = st.slider(
-    "what is your GPA?",
+    "What is your GPA?",
     2.0,
     4.0,
     2.0
@@ -75,13 +74,13 @@ GPA = st.slider(
 start_count += 1
 
 languages = st.multiselect(
-    "what Languages do you speak (english is assumed)?",
+    "What languages do you speak (english is assumed)?",
     ['Chinese','Japanese','Spanish','German','French'],
 )
 start_count += 1
 
 if len(languages) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
@@ -91,7 +90,7 @@ research_interest = st.multiselect(
 )
 
 if len(research_interest) > 1 or len(research_interest) == 0:
-    st.markdown(":red[error: Please make sure you select one option]")
+    st.markdown(":red[Error: Please make sure you select one option]")
 else:
     start_count += 1
 
