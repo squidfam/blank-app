@@ -40,8 +40,8 @@ def run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,r
     multi_categorical_features = ["Skills", "Languages", "ClubMemberships"]
 
     # Initialize encoders
-    mlb = MultiLabelBinarizer()
-    ohe = OneHotEncoder(dtype=int, sparse_output=False)
+    mlb = sklearn.preprocessing.MultiLabelBinarizer()
+    ohe = sklearn.preprocessing.OneHotEncoder(dtype=int, sparse_output=False)
 
     # Encode multi-categorical features
     for feature in multi_categorical_features:
