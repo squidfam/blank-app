@@ -121,6 +121,7 @@ st.title("What club should you be in? (AI_Lab project)")
 
 st.write(
     "Hello and welcome to Team 1's project!"
+)
 
 st.write("For more information on this project, check out our [Gituh repo](https://github.com/noahvezina26/student-clubs-ml)."
 )
@@ -206,9 +207,9 @@ else:
     start_count += 1
 
 st.button("Reset", type="primary")
-if st.button("Run AI") and start_count == 9:
+if st.button("Run AI") and start_count == 8:
     output = run_AI(academic_interest,skills,location,year_of_study,major,GPA,languages,research_interest)
-elif start_count != 9:
-    st.markdown(":red[error:please make sure you've inputted everything correctly]")
+elif start_count != 8:
+    st.markdown(":red[Error: Please make sure you've inputted everything correctly!]")
 
 st.write("You should go into", output)
