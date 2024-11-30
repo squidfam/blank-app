@@ -120,8 +120,7 @@ start_count = 0
 st.title("What club should you be in? (AI_Lab project)")
 
 st.write(
-    "Hello and welcome to Team 1's project! Please select one choice per question unless otherwise specified."
-)
+    "Hello and welcome to Team 1's project!"
 
 st.write("For more information on this project, check out our [Gituh repo](https://github.com/noahvezina26/student-clubs-ml)."
 )
